@@ -1,0 +1,122 @@
+.main-body{
+  background-image: url(../../images/login/2.jpg);
+  background-size: cover;
+  display: flex;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+}
+.login-body{
+  width: 350px;
+  display: flex;
+  background-color: white;
+  margin: auto;
+  border-radius: 30px;
+  padding: 50px 40px;
+  flex-direction: column;
+}
+.title{
+  font-size: 39px;
+  text-align: center;
+}
+.login-body-content-ul{
+  list-style: none;
+  padding: 0;
+}
+.login-body-content-ul li{
+  line-height: 50px;
+}
+.li-input{
+  height: 40px;
+  border-bottom: 1px solid;
+  display: flex;
+  opacity: 0.5;
+}
+.li-input img{
+  margin-top: 9px;
+  margin-right: 15px;
+  width:20px;
+  height:20px;
+}
+.li-input input{
+  width: 100%;
+  font-size: 16px;
+  background:none;
+  outline:none;
+  border: none;
+}
+.li-input input:focus{
+  border:none;
+}
+.forget-password{
+  float: right;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  background: no-repeat;
+  cursor: pointer;
+}
+.forget-password:hover{
+  color: #409eff;
+}
+.btn{
+  margin-top: 20px;
+  height: 44px;
+  background-color: #2588F9;
+  border-radius: 30px;
+}
+.btn:hover{
+  background-color:  #409eff;
+}
+
+.btn button{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background: no-repeat;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+.other-login-way{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.other-login-way span{
+  text-align: center;
+}
+.other-login-way ul{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.other-login-way ul li img{
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+.other-login-way ul li img:hover{
+  opacity: 0.5;
+}
+.register-btn{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.register-btn button{
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: no-repeat;
+}
+.register-btn button:hover{
+  color: #409eff;
+}

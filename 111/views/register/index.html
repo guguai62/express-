@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Behance</title>
+    <link rel="icon" href="images/register/Be.ico">
+    <link rel="stylesheet" href="stylesheets/register/index.css">
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/md5.js"></script>
+    <script src="javascripts/base64.js"></script>
+    <script src="javascripts/login.js"></script>
+  </head>
+  <body>
+    <div class="main-body">
+      <div class="register-body">
+        <div class="title">
+          注册
+        </div>
+        <div class="register-body-content">
+          <ul>
+            <li>
+              <span>用户名</span>
+              <div class="li-input">
+                <img src="images/register/username.png" alt="">
+                <input type="text" name="" value="" placeholder="请输入用户名" id="accountName">
+              </div>
+            </li>
+            <li>
+              <span>密码</span>
+              <div class="li-input" id="asd">
+                <img src="images/register/password.png" alt="">
+                <input type="password" name="" value="" placeholder="请输入密码" id="firstPassword">
+              </div>
+              <div id="hasErr" style="line-height: 20px;font-size: 12px;color: red;display: none;"></div>
+            </li>
+            <li>
+              <span>确认密码</span>
+              <div class="li-input">
+                <img src="images/register/password.png" alt="">
+                <input type="password" name="" value="" placeholder="确认密码" id="secondPassword">
+              </div>
+              <div id="err" style="line-height: 20px;font-size: 12px;color: red;display: none;"></div>
+            </li>
+            <!-- <li>
+              <span>验证码</span>
+              <div class="li-input">
+                <img src="images/register/authentication.png" alt="">
+                <input type="text" name="" value="" placeholder="请输入验证码">
+                <div class="authen-content">
+                  <img src="images/register/authencode.png" alt="">
+                </div>
+              </div>
+            </li> -->
+          </ul>
+        </div>
+        <div class="btn">
+          <button type="button" name="button" id="checkAndRegister">注册</button>
+        </div>
+        <div class="register-bottom">
+          <span>已有账号?</span>
+          <span class="return-login" id="goBackLogin">返回登陆</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
