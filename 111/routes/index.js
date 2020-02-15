@@ -2,17 +2,17 @@ var express = require('express');
 var router = express.Router();
 var userSql=require('../API/login')
 var md5 = require('md5-node')
-var COS = require('cos-nodejs-sdk-v5');
-var cos = new COS({
-  AppId: '1300918548',
-  SecretId: 'AKIDWs3LTODRVO4iLkgwCE0Z6eR0W9ZxNG9p',
-  SecretKey: 'kJqAKIzUkx9JSJ7VhdUE1b1EIBtQl4GI',
-});
+// var COS = require('cos-nodejs-sdk-v5');
+// var cos = new COS({
+//   AppId: '1300918548',
+//   SecretId: 'AKIDWs3LTODRVO4iLkgwCE0Z6eR0W9ZxNG9p',
+//   SecretKey: 'kJqAKIzUkx9JSJ7VhdUE1b1EIBtQl4GI',
+// });
 
-var tengxun_cos = {
-  Bucket: 'bucket-1300918548',
-  Region: 'ap-shanghai',
-}
+// var tengxun_cos = {
+//   Bucket: 'bucket-1300918548',
+//   Region: 'ap-shanghai',
+// }
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -86,40 +86,40 @@ router.post('/loginIn',function(req,res,next){
   })
 })
 
-router.post('/api/upload',function(req,res,next){
-  var base64img=req.body.img;
-  //移除“data:image/png;base64,”字符串
-  var base64Data = base64img.replace(/^data:image\/\w+;base64,/, "");
-  //转换为Buffer对象
-  var buffer=Buffer.from(base64Data,'base64');
-  var key='/wdnmd/2.jpg';
-  cos.putObject({
-    Bucket : tengxun_cos.Bucket,                        /* 必须 */
-    Region : tengxun_cos.Region,                        /* 必须 */
-    Key : key,                           /* 必须 */
-    Body: buffer,           /* 必须 */
-    onProgress: function (progressData) {
-      console.log(progressData);
-    },
-  }, function(err, data) {
-      if(err) {
-        console.log(err)
-      } else {
-        //获取刚上传的图片的url
-        cos.getObjectUrl({
-          Bucket: tengxun_cos.Bucket,
-          Region: tengxun_cos.Region,
-          Key: key
-          //Sign: true
-        }, function (err, data) {
-          if(!err){
-            var url=data.Url
-            res.send(url);
-          }
-        });
-      }
-  })
-})
+// router.post('/api/upload',function(req,res,next){
+//   var base64img=req.body.img;
+//   //移除“data:image/png;base64,”字符串
+//   var base64Data = base64img.replace(/^data:image\/\w+;base64,/, "");
+//   //转换为Buffer对象
+//   var buffer=Buffer.from(base64Data,'base64');
+//   var key='/wdnmd/2.jpg';
+//   cos.putObject({
+//     Bucket : tengxun_cos.Bucket,                        /* 必须 */
+//     Region : tengxun_cos.Region,                        /* 必须 */
+//     Key : key,                           /* 必须 */
+//     Body: buffer,           /* 必须 */
+//     onProgress: function (progressData) {
+//       console.log(progressData);
+//     },
+//   }, function(err, data) {
+//       if(err) {
+//         console.log(err)
+//       } else {
+//         //获取刚上传的图片的url
+//         cos.getObjectUrl({
+//           Bucket: tengxun_cos.Bucket,
+//           Region: tengxun_cos.Region,
+//           Key: key
+//           //Sign: true
+//         }, function (err, data) {
+//           if(!err){
+//             var url=data.Url
+//             res.send(url);
+//           }
+//         });
+//       }
+//   })
+// })
 
 router.get('/getAllPic',function(req,res,next){
   userSql.getAllPictures("",function(results,fields){
